@@ -4,6 +4,10 @@ import subprocess
 import re
 from playwright.sync_api import sync_playwright
 
+CHROMIUM_SRC = "/ms-playwright/chromium-1105/chrome-linux"   # base image Chromium
+CHROMIUM_DST = "/tmp/chromium"                              # cached Chromium path
+CHROME_PATH = f"{CHROMIUM_DST}/chrome"   
+
 def ensure_chromium_cached():
     if os.path.exists(CHROMIUM_DST):
         return
